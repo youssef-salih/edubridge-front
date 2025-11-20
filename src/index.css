@@ -2,6 +2,9 @@
 @import "tailwindcss";
 
 @theme {
+  --text-big: 29.3px;
+  --leading-title-lg: 36px;
   --color-primary: #9b91c7;
+  --color-title: #1d283a;
   --font-inter: "Inter";
 }
