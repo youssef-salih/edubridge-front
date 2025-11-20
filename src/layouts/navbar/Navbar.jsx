@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./index.css";
+import links from "../links";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -14,15 +15,16 @@ const Navbar = () => {
         {/* Hamburger (mobile) */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-white">
           {open ? <X size={28} /> : <Menu size={28} />}
+          hello
         </button>
       </div>
 
       {/* Menu Mobile */}
       {open && (
         <ul className="md:hidden absolute left-0 top-16 w-full bg-white shadow-lg flex flex-col p-4 space-y-4 text-gray-700 font-semibold">
-          <li className="hover:text-primary cursor-pointer">Home</li>
-          <li className="hover:text-primary cursor-pointer">About</li>
-          <li className="hover:text-primary cursor-pointer">Contact</li>
+          {links.map((link) => (
+            <li className="hover:text-primary cursor-pointer">{link.title}</li>
+          ))}
         </ul>
       )}
     </header>
