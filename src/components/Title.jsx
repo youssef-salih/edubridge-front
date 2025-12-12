@@ -5,13 +5,12 @@ function Title({ title, children = "", className = "" }) {
     throw new Error("Le prop 'title' est obligatoire");
   }
 
-
   return (
-    <div className={`space-y-2 ${className}`}>
-      <h1 className="font-inter font-bold text-title text-4xl">{title}</h1>
+    <div className={`space-y-2 my-3 ${className}`}>
+      <h1 className="font-inter font-bold text-title text-4xl leading-5">{title}</h1>
 
       {children && (
-        <p className="font-inter text-[var(--text-title-lg)] leading-[var(--leading-title-lg)] text-title">
+        <p className="font-inter text-xs leading-6 text-gray-500">
           {children}
         </p>
       )}
