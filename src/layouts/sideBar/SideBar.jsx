@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router";
 import { cn } from "../../utils/cn";
 import { menu } from "../navLinks";
 
-export const SIDEBAR_WIDTH = "14rem";
+export const SIDEBAR_WIDTH = "13rem";
 export const SIDEBAR_WIDTH_MOBILE = "0rem";
 export const SIDEBAR_WIDTH_ICON = "3.5rem";
 const SIDEBAR_KEYBOARD_SHORTCUT = "b";
@@ -43,7 +43,7 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
 
   return (
     <div
-      className="fixed top-0 left-0 h-screen text-white transition-[width] duration-300 bg-white border-r dark:border-white dark:bg-primary border-primary"
+      className="fixed top-0 left-0 h-screen text-white transition-all duration-300 bg-white border-r dark:border-white dark:bg-primary border-primary"
       style={{
         width: collapsed ? SIDEBAR_WIDTH_ICON : SIDEBAR_WIDTH,
       }}
@@ -90,18 +90,23 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
                 }}
                 className={({ isActive }) =>
                   cn(
-                    "relative flex font-medium items-center justify-between w-full px-4 py-2 cursor-pointer group dark:text-white dark:hover:bg-white dark:hover:text-primary text-primary hover:bg-primary/50 hover:text-white",
-                    isActiveParent && "bg-primary/70 text-white",
-                    item.to && isActive && "bg-white text-primary!"
+                    "relative flex font-medium items-center justify-between w-full px-4 py-2 cursor-pointer group dark:text-white dark:hover:bg-white dark:hover:text-primary text-primary hover:bg-primary/50",
+
+                    isActiveParent &&
+                      "bg-primary/70 text-white dark:bg-secondary dark:text-white!",
+
+                    item.to &&
+                      isActive &&
+                      "bg-primary! dark:bg-white! text-white dark:text-primary! "
                   )
                 }
               >
                 <div className="flex items-center gap-3 overflow-hidden">
                   {item.icon}
-                  {!collapsed && <span>{item.name}</span>}
+                  {!collapsed && <span className="text-sm">{item.name}</span>}
 
                   {collapsed && (
-                    <span className="absolute px-2 py-1 ml-2 text-sm text-white transition bg-gray-800 rounded opacity-0 left-full group-hover:opacity-100">
+                    <span className="absolute px-2 py-1 ml-2 text-sm text-white transition bg-gray-800 rounded opacity-0  left-full group-hover:opacity-100">
                       {item.name}
                     </span>
                   )}
@@ -116,8 +121,6 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
                   ))}
               </NavLink>
 
-              {/*WORKING HERE */}
-
               {hasChildren && (
                 <div
                   className={`transition-all duration-300 font-medium overflow-hidden ${
@@ -129,8 +132,8 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
                       key={idx}
                       to={child.to || "/"}
                       className={({ isActive }) =>
-                        `group relative flex items-center gap-3 py-2 pr-4 ${
-                          !collapsed ? "pl-12" : "pl-4.5"
+                        `group relative flex items-center gap-3 py-2 pr-0 ${
+                          !collapsed ? "pl-8" : "pl-4.5"
                         }  hover:bg-primary/40 dark:bg-primary-dark ${
                           isActive
                             ? "bg-primary text-white hover:bg-primary/80 dark:bg-white dark:text-primary dark:hover:bg-white/80"
@@ -139,7 +142,9 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
                       }
                     >
                       {child.icon}
-                      {!collapsed && <span className="">{child.name}</span>}
+                      {!collapsed && (
+                        <span className="text-sm capitalize">{child.name}</span>
+                      )}
 
                       {collapsed && (
                         <span className="absolute px-2 py-1 text-sm text-white transition-all duration-200 -translate-y-1/2 bg-gray-800 rounded opacity-0 left-full top-1/2 group-hover:opacity-100 whitespace-nowrap">

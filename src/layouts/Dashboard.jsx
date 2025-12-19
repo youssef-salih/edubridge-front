@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./navbar/Navbar";
 import { Outlet } from "react-router";
-import Sidebar from "./sideBar/SideBar";
+import Sidebar, { SIDEBAR_WIDTH } from "./sideBar/SideBar";
 import { useTheme } from "../hooks/useTheme";
 import Loader from "../components/Loader";
 
@@ -12,7 +12,7 @@ const Dashboard = () => {
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
     handleResize();
     setLoading(false);
     window.addEventListener("resize", handleResize);
@@ -34,7 +34,7 @@ const Dashboard = () => {
       <div
         className="w-full min-h-screen transition-[width,margin] duration-300"
         style={{
-          marginLeft: isMobile ? "0rem" : collapsed ? "3.5rem" : "14rem",
+          marginLeft: isMobile ? "0rem" : collapsed ? "3.5rem" : SIDEBAR_WIDTH,
         }}
       >
         <Navbar

@@ -4,30 +4,37 @@ import CardAnalitycs from "../components/cards/CardAnalitycs";
 import CardsContainer from "../components/cards/CardsContainer";
 import IntershipsApplyCard from "../components/cards/IntershipsApplyCard";
 import RecentApplicant from "../components/cards/RecentApplicant";
+import Wrapper from "../layouts/Wrapper";
 
 const Home = () => {
   return (
-    <div className="container mx-auto space-y-5">
+    <Wrapper>
       <Title
         title={"Student Dashboard"}
         children="Welcome back! Track your applications and find new opportunities."
       />
 
-      <CardAnalitycs />
+      <div className="space-y-5">
+        <CardAnalitycs />
 
-      <div className="grid grid-cols-12 gap-5">
-        <CardsContainer
-          cards={IntershipsApplyCard}
-          bigTitle={"Software Engineering Intern"}
-          title={"Tech Solutions Inc."}
-        />
-        <CardsContainer
-          cards={RecentApplicant}
-          bigTitle={"Recent Applications"}
-          title={"Track the status of your applications"}
-        />
+        <div className="grid grid-cols-12 gap-5 ">
+          <CardsContainer
+            cards={IntershipsApplyCard}
+            bigTitle={"Software Engineering Intern"}
+            title={"Tech Solutions Inc."}
+            button={"View All Internships"}
+            to={"#"}
+          />
+          <CardsContainer
+            cards={RecentApplicant}
+            bigTitle={"Recent Applications"}
+            title={"Track the status of your applications"}
+            button={"View All Internships"}
+            to={"#"}
+          />
+        </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

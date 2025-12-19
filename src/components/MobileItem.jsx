@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { NavLink } from "react-router";
+import { cn } from "../utils/cn";
 
 const MobileItem = ({
   item,
@@ -21,15 +22,21 @@ const MobileItem = ({
   return (
     <div className="w-full">
       {/* Parent Button */}
-      <button
+      <NavLink
+        to={item.to || "#"}
         onClick={() => hasChildren && setOpen((p) => !p)}
-        className={`w-full flex justify-between items-center py-3 px-3 rounded-md 
-                    transition 
-                    ${
-                      isActiveParent
-                        ? "bg-primary/70 text-white"
-                        : " text-primary"
-                    }`}
+        className={({ isActive }) =>
+          cn(
+            "relative flex font-medium items-center justify-between w-full px-4 py-2 cursor-pointer group dark:text-white dark:hover:bg-white dark:hover:text-primary text-primary hover:bg-primary/50",
+
+            isActiveParent &&
+              "bg-primary/70 text-white dark:bg-secondary dark:text-white!",
+
+            item.to &&
+              isActive &&
+              "bg-primary! dark:bg-white! text-white dark:text-primary! "
+          )
+        }
       >
         <div className="flex items-center gap-3">
           {item.icon}
@@ -44,7 +51,7 @@ const MobileItem = ({
             }`}
           />
         )}
-      </button>
+      </NavLink>
 
       {/* Children */}
       {hasChildren && (

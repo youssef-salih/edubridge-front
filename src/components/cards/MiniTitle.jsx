@@ -6,7 +6,9 @@ const MiniTitle = ({ bigTitle, title }) => {
       <h1 className="text-lg font-bold leading-5 font-inter text-title">
         {bigTitle}
       </h1>
-      <p className="text-sm leading-6 text-gray-500 font-inter">{title}</p>
+      {title && (
+        <p className="text-sm leading-6 text-gray-500 font-inter">{title}</p>
+      )}
     </>
   );
 };

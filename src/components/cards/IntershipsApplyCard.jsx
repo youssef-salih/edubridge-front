@@ -2,19 +2,16 @@ import React from "react";
 import Badge from "../Badge";
 import MiniTitle from "./MiniTitle";
 import Button from "../Button";
+import CardTitle from "./CardTitle";
 
 const IntershipsApplyCard = () => {
   return (
-    <div className="w-full p-3 border border-gray-300 rounded-xl min-h-24">
+    <div className="w-full p-3 border border-gray rounded-xl min-h-24  relative z-10">
       <div className="flex justify-between">
-        <div>
-          <h1 className="text-sm font-bold leading-5 font-inter text-title">
-            Software Engineering Intern
-          </h1>
-          <p className="text-xs leading-6 text-gray-500 font-inter">
-            Tech Solutions Inc.
-          </p>
-        </div>
+        <CardTitle
+          bigTitle={"Software Engineering Intern"}
+          title={"Tech Solutions Inc."}
+        />
 
         <Badge>3 mounths</Badge>
       </div>
@@ -38,7 +35,7 @@ const IntershipsApplyCard = () => {
         </div>
       </div>
       {/* button */}
-      <Button classes={" capitalize mt-2"}>apply Now</Button>
+      <Button className={" capitalize mt-2"}>apply Now</Button>
     </div>
   );
 };

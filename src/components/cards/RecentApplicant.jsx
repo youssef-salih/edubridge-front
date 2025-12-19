@@ -3,7 +3,7 @@ import Button from "../Button";
 
 const RecentApplicant = () => {
   return (
-    <div className="w-full p-3 border border-gray-300 rounded-xl min-h-24">
+    <div className="w-full col-span-6 p-3 bg-white border border-gray rounded-xl min-h-24">
       <div className="flex justify-between">
         <div>
           <h1 className="text-sm font-bold leading-5 font-inter text-title">
@@ -14,7 +14,7 @@ const RecentApplicant = () => {
           </p>
         </div>
 
-        <Badge>3 mounths</Badge>
+        <Badge color="bg-red-100 border-none" className={"text-red-500"}>3 mounths</Badge>
       </div>
       {/* description */}
 
