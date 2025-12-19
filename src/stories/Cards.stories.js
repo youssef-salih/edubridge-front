@@ -1,5 +1,6 @@
-import Cards from "../components/Cards";
+
 import { User, BarChart3, Home } from "lucide-react";
+import Cards from "../components/cards/Cards";
 
 export default {
   title: "Components/Cards",

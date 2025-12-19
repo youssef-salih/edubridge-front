@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 
 import Dashboard from "./layouts/Dashboard";
 import mainRoutes from "./routes";
+import Page404 from "./pages/Page404";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           return <Route key={path} path={path} element={<Element />} />;
         })}
       </Route>
-      {/* <Route path="*" element={"404"} /> */}
+      <Route path="*" element={<Page404/>} />
     </Routes>
   );
 }

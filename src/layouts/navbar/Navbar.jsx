@@ -50,7 +50,7 @@ const Navbar = ({ theme, toggleTheme, collapsed, isMobile }) => {
           {/* MOBILE MENU ICON */}
           <button
             onClick={() => setOpen(!open)}
-            className="text-gray-400 transition-all duration-300 ease-in-out md:hidden dark:text-white"
+            className="text-gray-400 transition-all duration-300 ease-in-out lg:hidden dark:text-white"
           >
             {open ? (
               <X
@@ -69,7 +69,7 @@ const Navbar = ({ theme, toggleTheme, collapsed, isMobile }) => {
 
       {/* MOBILE MENU */}
       <ul
-        className={`md:hidden absolute left-0 top-16 w-full bg-white shadow-lg overflow-hidden
+        className={`lg:hidden absolute left-0 top-16 w-full bg-white shadow-lg overflow-hidden
                     transition-all duration-300 ease-in-out
                     ${open ? "max-h-fit opacity-100" : "max-h-0 opacity-0"} 
                   `}

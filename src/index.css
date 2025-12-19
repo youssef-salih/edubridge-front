@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
-*{
+* {
   font-family: "inter";
 }
 
@@ -14,6 +14,23 @@
   --color-light: #f2f3fc;
   --color-primary-dark: #8d7da8;
   --color-title: #1d283a;
-
+  --color-gray: #d1d5dc;
   --font-inter: "Inter";
+}
+
+@layer utilities {
+  /* Define custom text-outline utilities */
+  .text-outline-primary {
+    -webkit-text-stroke: 1px var(--color-primary);
+    color: var(--color-secondary);
+  }
+  .text-shadow-outline {
+    text-shadow: -2px -2px 0 var(--color-primary), 2px -2px 0 var(--color-primary), -2px 2px 0 var(--color-primary),
+      2px 2px 0 var(--color-primary);
+  }
+  .text-outline-black-2 {
+    -webkit-text-stroke: 2px black;
+    color: transparent;
+  }
+  /* Add more variations as needed */
 }
