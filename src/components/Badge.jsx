@@ -4,6 +4,7 @@ import { cn } from "../utils/cn";
 const Badge = ({
   color = "bg-white",
   children,
+  divClassName,
   className,
   border = "border-gray-300",
 }) => {
@@ -12,7 +13,8 @@ const Badge = ({
       className={cn(
         "flex items-center justify-center px-3 py-0.5 border  rounded-full h-fit",
         color,
-        border
+        border,
+        divClassName
       )}
     >
       <p className={cn("text-xs font-semibold", className)}>{children}</p>

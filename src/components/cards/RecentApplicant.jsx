@@ -3,7 +3,7 @@ import Button from "../Button";
 
 const RecentApplicant = () => {
   return (
-    <div className="w-full col-span-6 p-3 bg-white border border-gray rounded-xl min-h-24">
+    <div className="w-full col-span-6 p-3 bg-white border border-gray rounded-xl min-h-fit">
       <div className="flex justify-between">
         <div>
           <h1 className="text-sm font-bold leading-5 font-inter text-title">

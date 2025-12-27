@@ -22,7 +22,7 @@ const RecommandationItem = () => {
           </p>
         </div>
 
-        <Badge>3 mounths</Badge>
+        <Badge>Pending</Badge>
       </div>
     </div>
   );

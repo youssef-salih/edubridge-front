@@ -103,10 +103,12 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
               >
                 <div className="flex items-center gap-3 overflow-hidden">
                   {item.icon}
-                  {!collapsed && <span className="text-sm">{item.name}</span>}
+                  {!collapsed && (
+                    <span className="text-sm capitalize">{item.name}</span>
+                  )}
 
                   {collapsed && (
-                    <span className="absolute px-2 py-1 ml-2 text-sm text-white transition bg-gray-800 rounded opacity-0  left-full group-hover:opacity-100">
+                    <span className="absolute capitalize px-2 py-1 ml-2 text-sm text-white transition bg-gray-800 rounded opacity-0  left-full group-hover:opacity-100">
                       {item.name}
                     </span>
                   )}
@@ -147,7 +149,7 @@ const Sidebar = ({ collapsed, setCollapsed, toggleTheme, theme }) => {
                       )}
 
                       {collapsed && (
-                        <span className="absolute px-2 py-1 text-sm text-white transition-all duration-200 -translate-y-1/2 bg-gray-800 rounded opacity-0 left-full top-1/2 group-hover:opacity-100 whitespace-nowrap">
+                        <span className="absolute capitalize px-2 py-1 text-sm text-white transition-all duration-200 -translate-y-1/2 bg-gray-800 rounded opacity-0 left-full top-1/2 group-hover:opacity-100 whitespace-nowrap">
                           {child.name}
                         </span>
                       )}

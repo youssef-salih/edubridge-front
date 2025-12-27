@@ -1,9 +1,9 @@
-import { Building2, Home, Info, Settings, User } from "lucide-react";
+import { Building2, ChartBar, Home, Info, Settings, User } from "lucide-react";
 
 export let role = ["Cordinateur", "Student", "Rh"];
 export const menu = [];
 
-let selectedRole = role[0];
+let selectedRole = role[2];
 if (selectedRole === "Student") {
   menu.push(
     {
@@ -67,6 +67,36 @@ if (selectedRole === "Cordinateur") {
       name: "Entreprises",
       icon: <Building2 size={20} />,
       to: "/entreprises",
+    }
+  );
+}
+if (selectedRole === "Rh") {
+  menu.push(
+    {
+      name: "Dashboard",
+      icon: <Home size={20} />,
+      to: "/",
+    },
+    {
+      name: "interships",
+      icon: <User size={20} />,
+      children: [
+        {
+          name: "Interships List",
+          icon: <Info size={16} />,
+          to: "/interships-offers",
+        },
+        {
+          name: "Applicant",
+          icon: <Info size={16} />,
+          to: "/applicant",
+        },
+      ],
+    },
+    {
+      name: "Statistics",
+      icon: <ChartBar size={20} />,
+      to: "/statistics",
     }
   );
 }
