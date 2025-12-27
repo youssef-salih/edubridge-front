@@ -8,6 +8,9 @@ const Login = lazy(() => import("@/pages/Login.jsx"));
 const StudentsList = lazy(() => import("@/pages/StudentsList.jsx"));
 const Recommandation = lazy(() => import("@/pages/Recommandation.jsx"));
 const Entreprises = lazy(() => import("@/pages/Entreprises.jsx"));
+const IntershipsOffers = lazy(() => import("@/pages/IntershipsOffers.jsx"));
+const Applicant = lazy(() => import("@/pages/Applicant.jsx"));
+const RhStatistics = lazy(() => import("@/pages/RhStatistics.jsx"));
 
 const mainRoutes = [
   { path: "/", element: Home, isPotected: false },
@@ -45,6 +48,24 @@ const mainRoutes = [
   {
     path: "/entreprises",
     element: Entreprises,
+    isProtected: false,
+    roles: ["Student"],
+  },
+  {
+    path: "/interships-offers",
+    element: IntershipsOffers,
+    isProtected: false,
+    roles: ["Student"],
+  },
+  {
+    path: "/applicant",
+    element: Applicant,
+    isProtected: false,
+    roles: ["Student"],
+  },
+  {
+    path: "/statistics",
+    element: RhStatistics,
     isProtected: false,
     roles: ["Student"],
   },
