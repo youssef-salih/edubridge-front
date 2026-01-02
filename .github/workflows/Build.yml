@@ -1,0 +1,21 @@
+name: Youssef-React-Ci
+
+on:
+    push:
+        branches:
+            -main
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest  
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+                with: 
+                    node-version: 22
+            -name: installing deps
+                run: npm i
+
+            -name: building
+                run: npm run build
